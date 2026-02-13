@@ -8,4 +8,7 @@ void main() {
     slidingWindowDynamic.calculateProblem1();
     slidingWindowDynamic.calculateProblem2();
 
+    BinarySearch binarySearch = new BinarySearch();
+    binarySearch.calculateProblem1();
+
 }
