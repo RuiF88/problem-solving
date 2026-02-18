@@ -1,5 +1,8 @@
 public class BinarySearch {
-
+/*
+* You are given the root of a Binary Search Tree (BST) and an integer value target.
+* Your task is to determine whether the value exists in the tree.
+*/
     public void calculateProblem1(){
         int[] sortedArray = new int[]{2, 3, 4, 5, 8, 10};
         int target = 8;

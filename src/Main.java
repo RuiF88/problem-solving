@@ -11,4 +11,15 @@ void main() {
     BinarySearch binarySearch = new BinarySearch();
     binarySearch.calculateProblem1();
 
+    BreadthFirstSearch.TreeNode root = new BreadthFirstSearch.TreeNode(5);
+    root.left = new BreadthFirstSearch.TreeNode(3);
+    root.right = new BreadthFirstSearch.TreeNode(8);
+    root.left.left = new BreadthFirstSearch.TreeNode(2);
+    root.left.right = new BreadthFirstSearch.TreeNode(4);
+    root.right.right = new BreadthFirstSearch.TreeNode(10);
+
+    BreadthFirstSearch breadthFirstSearch = new BreadthFirstSearch();
+    breadthFirstSearch.calculateProblem1(root);
+
+
 }
