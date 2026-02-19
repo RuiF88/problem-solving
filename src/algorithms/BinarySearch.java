@@ -1,3 +1,5 @@
+package algorithms;
+
 public class BinarySearch {
 /*
 * You are given the root of a Binary Search Tree (BST) and an integer value target.

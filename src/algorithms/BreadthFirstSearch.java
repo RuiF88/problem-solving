@@ -1,3 +1,5 @@
+package algorithms;
+
 import java.util.*;
 
 /*
@@ -6,12 +8,12 @@ import java.util.*;
  */
 public class BreadthFirstSearch {
 
-    static class TreeNode {
+    public static class TreeNode {
         int value;
-        TreeNode right;
-        TreeNode left;
+        public TreeNode right;
+        public TreeNode left;
 
-        TreeNode(int value) {
+        public TreeNode(int value) {
             this.value = value;
         }
     }
@@ -25,10 +27,9 @@ public class BreadthFirstSearch {
             int sizeOfLevel = queue.size();
             List<Integer> newLevel = new ArrayList<>();
             for (int i = 0; i < sizeOfLevel; i++) {
-                System.out.println(queue.peek().value);
                 TreeNode node = queue.poll();
                 if(node.value == target){
-                    System.out.println("Value Found");
+                    return;
                 }
                 newLevel.add(node.value);
                 if (node.left != null) {
