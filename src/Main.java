@@ -1,14 +1,12 @@
-import algorithms.BinarySearch;
-import algorithms.BreadthFirstSearch;
-import algorithms.SlidingWindowDynamic;
-import algorithms.SlidingWindowFixed;
-import designpatterns.singleton.ApplicationState;
-import designpatterns.strategy.BusStrategy;
-import designpatterns.strategy.CarStrategy;
-import designpatterns.strategy.Commuter;
+import designpatterns.factoryMethod.AbstractRestaurant;
+import designpatterns.factoryMethod.CheeseBurgerRestaurant;
+import designpatterns.factoryMethod.NormalBurgerRestaurant;
+import designpatterns.factoryPatternIdiom.Burger;
+import designpatterns.factoryPatternIdiom.Restaurant;
 
 void main() {
     //instantiate what class and run problems. If no exception are thrown then all is correct
+    /*
     SlidingWindowFixed slidingWindowFixed = new SlidingWindowFixed();
     slidingWindowFixed.calculateProblem1();
     slidingWindowFixed.calculateProblem2();
@@ -30,15 +28,30 @@ void main() {
     BreadthFirstSearch breadthFirstSearch = new BreadthFirstSearch();
     breadthFirstSearch.calculateProblem1(root);
 
+    //StrategyPattern
     Commuter commuterUsesCar = new Commuter(new CarStrategy());
     commuterUsesCar.goToWork();
     Commuter commuterUsesBus = new Commuter(new BusStrategy());
     commuterUsesBus.goToWork();
 
+    //SingletonPattern
     ApplicationState applicationState = ApplicationState.getInstance("online");
     ApplicationState applicationState2 = ApplicationState.getInstance("offline");
     applicationState.getState();
     //points to the same object in memory
     applicationState2.getState();
+    */
 
+    //FactoryIdiom
+    Restaurant restaurant = new Restaurant();
+    Burger normalBurger = restaurant.orderBurger("NORMAL_BURGER");
+    //normalBurger.getIngredients();
+
+    //FactoryPatternMethod
+    AbstractRestaurant normalBurgerRestaurant = new NormalBurgerRestaurant();
+    designpatterns.factoryMethod.Burger normalBurger2 = normalBurgerRestaurant.orderBurger();
+    AbstractRestaurant cheeseBurgerRestaurant = new CheeseBurgerRestaurant();
+    designpatterns.factoryMethod.Burger cheeseBurger2 = cheeseBurgerRestaurant.orderBurger();
+    normalBurger2.getIngredients();
+    cheeseBurger2.getIngredients();
 }
